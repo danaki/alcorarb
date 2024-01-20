@@ -1,0 +1,22 @@
+steps:
+  # install
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+  # test
+  # - name: "gcr.io/cloud-builders/npm"
+  # args: ["run", "test"]
+  #build
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+    env:
+      - 'VUE_APP_DATABASE_URL=${_VUE_APP_DATABASE_URL}'
+      - 'VUE_APP_DATABASE_API_KEY=${_VUE_APP_DATABASE_API_KEY}'
+      - 'VUE_APP_DATABASE_AUTH_DOMAIN=${_VUE_APP_DATABASE_AUTH_DOMAIN}'
+      - 'VUE_APP_DATABASE_PROJECT_ID=${_VUE_APP_DATABASE_PROJECT_ID}'
+      - 'VUE_APP_DATABASE_STORAGE_BUCKET=${_VUE_APP_DATABASE_STORAGE_BUCKET}'
+      - 'VUE_APP_DATABASE_MESSAGING_SENDER_ID=${_VUE_APP_DATABASE_MESSAGING_SENDER_ID}'
+      - 'VUE_APP_DATABASE_APP_ID=${_VUE_APP_DATABASE_APP_ID}'
+
+  #deploy
+  - name: gcr.io/$PROJECT_ID/firebase
+    args: ['deploy', '--project=${_TARGET_PROJECT_ID}', '--only=${_HOSTING}']

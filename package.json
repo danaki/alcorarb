@@ -1,0 +1,71 @@
+{
+  "name": "alcor-arb",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "speedtest": "node server/speedtest.mjs",
+    "test": "node server/test.mjs",
+    "trader_simple": "node server/trader_simple.mjs",
+    "trader_fishing": "node server/trader_fishing.mjs",
+    "updater": "node server/updater.mjs",
+    "follower": "node server/follower.mjs"
+  },
+  "dependencies": {
+    "@google-cloud/secret-manager": "^3.11.0",
+    "@kaliber/firebase-queue": "^1.2.0",
+    "awilix": "^6.0.0",
+    "core-js": "^3.6.5",
+    "dotenv": "^16.0.0",
+    "eos-common": "^0.8.1",
+    "eosjs": "^22.1.0",
+    "firebase": "^8.10.0",
+    "firebase-admin": "^10.0.1",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.1.0",
+    "sleep": "^6.3.0",
+    "socket.io-client": "^4.4.0",
+    "vue": "^2.6.11",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.5.3",
+    "vuefire": "^2.2.5",
+    "vuetify": "^2.4.0",
+    "vuetify-toast-snackbar-ng": "^0.7.4",
+    "winston": "^3.3.3",
+    "ws": "^8.3.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.15",
+    "@vue/cli-service": "^4.5.15",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
